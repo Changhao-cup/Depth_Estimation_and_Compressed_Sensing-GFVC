@@ -5,7 +5,7 @@ import numpy as np
 
 Inputformat = 'Iframe_YUV420'  # 'Iframe_RGB444' OR 'Iframe_YUV420'
 testingdata_name = 'VOXCELEB'  #'CFVQA' OR 'VOXCELEB'
-Model = 'SSF'  ## 'FV2V' OR 'FOMM' OR 'CFTE'
+Model = 'DS'  ## 'FV2V' OR 'FOMM' OR 'CFTE'
 txt_path_ssim_YUV420 = '../experiment/' + Model + '/' + Inputformat + '/evaluation-YUV420/' + testingdata_name + '_result_' + 'ssim.txt'
 txt_path_psnr_YUV420 = '../experiment/' + Model + '/' + Inputformat + '/evaluation-YUV420/' + testingdata_name + '_result_' + 'psnr.txt'
 txt_path_psnr = '../experiment/' + Model + '/' + Inputformat + '/evaluation/' + testingdata_name + '_result_' + 'psnr.txt'

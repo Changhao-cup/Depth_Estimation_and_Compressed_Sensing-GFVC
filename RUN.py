@@ -9,7 +9,7 @@ seqlist = ['001','002','003','004','005','006','007','008','009','010','011','01
 
 qplist = ["22", "32", "42", "52"]
 
-Sequence_dir = '/home/media/CH/GFVC_SOftware/testing_sequence/'  ###You should download the testing sequence and modify the dir.
+Sequence_dir = '../testing_sequence/'  ###You should download the testing sequence and modify the dir.
 
 testingdata_name = ['CFVQA', 'VOXCELEB']  ## 'CFVQA' OR 'VOXCELEB'  ###You should choose which dataset to be encoded.
 if testingdata_name == 'CFVQA':
@@ -20,7 +20,7 @@ if testingdata_name == 'VOXCELEB':
 height = 256
 width = 256
 
-Model = ['SSF']  ## 'FV2V' OR 'FOMM' OR 'CFTE' ###You should choose which GFVC model to be uesed.
+Model = ['DS']  ## 'FV2V' OR 'FOMM' OR 'CFTE' ###You should choose which GFVC model to be uesed.
 
 Mode = ["Encoder","Decoder"]  ## "Encoder" OR 'Decoder'   ###You need to define whether to encode or decode a sequence.
 Iframe_format = 'YUV420'  ## 'YUV420'  OR 'RGB444' ###You need to define what color format to use for encoding the first frame.
@@ -32,8 +32,8 @@ for test_name in testingdata_name:
     for model in Model:
         if model == 'FV2V':
             quantization_factor = 256
-        if model == 'SSF':
-            quantization_factor = 2
+        if model == 'DS':
+            quantization_factor = 4
         if model == 'FOMM':
             quantization_factor = 64
         if model == 'CFTE':
@@ -51,9 +51,9 @@ for test_name in testingdata_name:
 testingdata_name = ['CFVQA', 'VOXCELEB']
 for test_name in testingdata_name:
     os.system(
-        f"python /home/media/CH/GFVC_SOftware/GFVC_Software-main-315_right/evaluate/getbits.py --testingdata_name {test_name}")
-    os.system(f"python /home/media/CH/GFVC_SOftware/GFVC_Software-main-315_right/evaluate/rgb444_to_yuv420.py --testingdata_name {test_name}")
+        f"python ../evaluate/getbits.py --testingdata_name {test_name}")
+    os.system(f"python ../evaluate/rgb444_to_yuv420.py --testingdata_name {test_name}")
     os.system(
-        f"python /home/media/CH/GFVC_SOftware/GFVC_Software-main-315_right/evaluate/multiMetric_rgb444.py --testingdata_name {test_name}")
+        f"python ../evaluate/multiMetric_rgb444.py --testingdata_name {test_name}")
     os.system(
-        f"python /home/media/CH/GFVC_SOftware/GFVC_Software-main-315_right/evaluate/multiMetric_yuv420.py --testingdata_name {test_name}")
+        f"python ../evaluate/multiMetric_yuv420.py --testingdata_name {test_name}")

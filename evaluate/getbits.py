@@ -37,12 +37,12 @@ if opt.testingdata_name=='VOXCELEB':
     frames=250
     
 
-Model='SSF'             ## 'FV2V' OR 'FOMM' OR 'CFTE'
+Model='DS'             ## 'FV2V' OR 'FOMM' OR 'CFTE'
 Iframe_format='YUV420'   ## 'YUV420'  OR 'RGB444'
 
 
-input_bin_file_path='/home/media/CH/GFVC_SOftware/GFVC_Software-main-315_right/experiment/'+str(Model)+'/Iframe_'+str(Iframe_format)
-save_path='/home/media/CH/GFVC_SOftware/GFVC_Software-main-315_right/experiment/'+str(Model)+'/Iframe_'+str(Iframe_format)+"/resultBit/"
+input_bin_file_path='../experiment/'+str(Model)+'/Iframe_'+str(Iframe_format)
+save_path='../experiment/'+str(Model)+'/Iframe_'+str(Iframe_format)+"/resultBit/"
 
 
 totalResult=np.zeros((len(seqlist)+1,len(qplist)))
